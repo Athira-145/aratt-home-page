@@ -25,11 +25,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import CountUp from "react-countup";
-
-
-
-
-
+import MobileView from '../../Components/MobileView';
 
 const Banner = () => {
   const sliderRef = useRef(null);
@@ -116,11 +112,11 @@ const Banner = () => {
               <div className='md:w-[95%] mx-auto md:pl-[3rem] md:pt-[2rem]'>
                <Swiper 
                 modules={[Autoplay]}
-          //       autoplay={{
-          //       delay: 4000, 
-          //       disableOnInteraction: false, 
-          // }}
-          autoplay={false}
+                autoplay={{
+                delay: 4000, 
+                disableOnInteraction: false, 
+          }}
+          // autoplay={false}
           spaceBetween={50}
           slidesPerView={2}
           loop={true} 
@@ -207,20 +203,24 @@ const Banner = () => {
             <div className='flex lg:w-[93%] mx-auto font-montserrat font-medium md:text-[2.2rem] text-[1.55rem] py-12 lg:pr-[3.5rem]'data-aos="fade-in" data-aos-delay="400">
               <p>Experience more than just a residences-embrace a lifestyle filled with enriching experiences and boundless opportunities</p>
             </div>
-            <div className='lg:w-[93%] mx-auto font-montserrat font-medium md:text-[2.2rem] text-[1.55rem] py-12 lg:pr-[3.5rem]'>
-              <div className='grid grid-cols-3'>
-              <div className='flex flex-row py-10 border-b border-b-lightGray border-r border-r-lightGray'data-aos="fade-in">
+              <div className='block md:hidden lg:hidden w-[93%] mx-auto font-montserrat font-medium text-[1.55rem] py-12'>
+                <MobileView/>
+              </div>
+            <div className='hidden md:block lg:block lg:w-[93%] mx-auto font-montserrat font-medium md:text-[2.2rem] text-[1.55rem] py-12 lg:pr-[3.5rem]'>
+              <div className='grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2'>
+                <div className='flex flex-row py-10 border-b border-b-lightGray border-r border-r-lightGray'data-aos="fade-in">
                 
-                <div className='w-1/2 px-4 py-4 items-center justify-center'>
-                <img src={icon1} alt="icon-one"/>
-                </div>
-                <div className='flex flex-col px-2'>
-                  <h2 className='font-bold text-[4rem] text-brandBlue leading-tight'>
-                     <div>
-                    {/* <span>25+</span> */}
-                    <CountUp end={25} duration={2} />+
+                  <div className='w-1/2 px-4 py-4 items-center justify-center'>
+                    <img src={icon1} alt="icon-one"/>
 
                   </div>
+                  <div className='flex flex-col px-2'>
+                    <h2 className='font-bold text-[4rem] text-brandBlue leading-tight'>
+                    <div>
+                    {/* <span>25+</span> */}
+                      <CountUp end={25} duration={2} />+
+
+                    </div>
                   </h2>
                  
                   <div className='font-montserrat text-[1.4rem] font-light mx-auto'>
@@ -228,7 +228,7 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className='flex flex-row py-10 border-b border-b-lightGray border-r border-r-lightGray'data-aos="fade-in">
+              <div className='flex flex-row py-10 border-b border-b-lightGray lg:border-r border-r-lightGray'data-aos="fade-in">
                 <div className='w-1/2 px-4 py-4 items-center justify-center'>
                 <img src={icon2} alt="icon-two"/>
                 </div>
@@ -245,7 +245,7 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className='flex flex-row py-10 border-b border-b-lightGray'data-aos="fade-in">
+              <div className='flex flex-row py-10 border-b border-b-lightGray md:border-r border-r-lightGray lg:border-r-0'data-aos="fade-in">
                 <div className='w-1/2 px-4 py-4 items-center justify-center'>
                 <img src={icon3} alt="icon-three"/>
                 </div>
@@ -262,7 +262,7 @@ const Banner = () => {
                   </div>
                 </div>
               </div>
-              <div className='flex flex-row py-10 border-r border-r-lightGray'data-aos="fade-in">
+              <div className='flex flex-row py-10 md:border-b border-b-lightGray lg:border-r border-r-lightGray lg:lg:border-b-0'data-aos="fade-in">
                 <div className='w-1/2 px-4 py-4 items-center justify-center'>
                 <img src={icon4} alt="icon-four"/>
                 </div>
@@ -314,10 +314,9 @@ const Banner = () => {
                 </div>
               </div>
             </div>
-            </div>
-           
-          </section>
-          </Container>
+          </div>
+        </section>
+      </Container>
           <section className='section-six md:p-[2rem] p-[1rem]'>
             <div className='flex lg:w-[94%] w-full mx-auto font-montserrat font-normal lg:text-[2.2rem] md:text-[1.7rem] text-[1.4rem] lg:pb-[3rem] md:pb-[2rem] pb-[2rem] text-white lg:pr-[3.5rem] md:pt-[3rem] pt-[2rem]'data-aos="fade-in" data-aos-delay="400">
               <p>Iconic living, meticulous design, and architectural excellence. Elevate your lifestyle with unmatched luxury,where every detail defines the distinction.</p>
